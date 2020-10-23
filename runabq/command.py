@@ -11,7 +11,8 @@ def run_command(solver_version: str,
         inpfile = target.rstrip('.inp')
         if not arg_terms:
             arg_terms = ''
-        command_list = [solver_version, '-j', inpfile, arg_terms]
+        command_list = [solver_version,
+                        'interactive', '-j', inpfile, arg_terms]
 
         print('-' * columns)
         print(f'job: {target}')
