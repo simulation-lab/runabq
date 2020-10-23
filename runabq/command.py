@@ -18,5 +18,6 @@ def run_command(solver_version: str,
         print(f'job: {target}')
         print(f'progress: {num}/{total_job_num}')
         print('-' * columns)
+
         print(command_list)
-        # subprocess.run(command_list)
+        subprocess.run(command_list)
