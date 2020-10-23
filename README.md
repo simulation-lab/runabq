@@ -19,7 +19,7 @@ When using the latest version.
 $ runabq
 ```
 
-Abaqus version 2018, all job
+Specify the abaqus version.
 
 ```sh
 $ runabq -v 2020
@@ -52,7 +52,22 @@ files list:
      1: job1.inp
      2: job2.inp
      3: job3.inp
+     4: test1.inp
+     5: test2.inp
      a: all
      x: exit
-code = 1,3
+code = 1, 4
+```
+
+```sh
+$ runabq
+files list:
+     1: case1.inp
+     2: case2.inp
+     3: case3.inp
+     4: job1.inp
+     5: job2.inp
+     a: all
+     x: exit
+code = 1:3
 ```
