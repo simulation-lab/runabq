@@ -45,7 +45,6 @@ def get_target_files() -> dict:
 
     codelist = [target['cnt'] for target in input_files_list]
     target_files = []
-    result = {}
     for code in _get_file_code():
         code = code.strip()
         if code == 'x' or code == 'exit':
@@ -70,6 +69,7 @@ def get_target_files() -> dict:
                     if target['cnt'] == int_code:
                         target_files.append(target['file_name'])
                         break
-    result['target_input_files'] = (f for f in target_files)
-    result['total_job_num'] = len(target_files)
-    return result
+    return {
+        'target_input_files': (f for f in target_files),
+        'total_job_num': len(target_files)
+    }
