@@ -1,7 +1,7 @@
 from shutil import which
 
 
-def get_solver_version(version: list) -> str:
+def get_solver_version(version: str) -> str:
     if version == 'latest':
         abc = 'abaqus'
     else:
