@@ -9,11 +9,12 @@ from runabq.command import run_command
               help='Abaqus version. example: if abq2020 then "-v 2020".')
 @click.argument('keyword', nargs=-1)
 def run(keyword, version):
-    runabq(keyword, version)
+    debug = False
+    runabq(keyword, version, debug)
     click.echo('finished.')
 
 
-def runabq(keyword, version):
+def runabq(keyword, version, debug):
     if solver_version := get_solver_version(version):
         arg_terms = get_arg_terms(keyword)
         files = get_target_files()
@@ -22,8 +23,6 @@ def runabq(keyword, version):
                         arg_terms=arg_terms,
                         target_input_files=files['target_input_files'],
                         total_job_num=files['total_job_num'],
-                        debug=False)
-        else:
-            print('file not found.')
+                        debug=debug)
     else:
         print('abq-command not found.')
