@@ -5,7 +5,8 @@ from runabq.command import run_command
 
 
 @click.command()
-@click.option('--version', '-v', default='latest', type=str)
+@click.option('--version', '-v', default='latest', type=str,
+              help='Abaqus version. example: if abq2020 then "-v 2020".')
 @click.argument('keyword', nargs=-1)
 def run(keyword, version):
     runabq(keyword, version)
