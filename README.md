@@ -11,7 +11,7 @@ $ pip install runabq
 ```
 
 
-## Example
+## Usage
 
 If there is a lot of Abaqus input data you want to execute in the current directory, execute the following command.
 Use the latest Abaqus version. That is, it executes the'abaqus' command internally.
