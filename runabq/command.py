@@ -24,5 +24,4 @@ def run_command(solver_version: str,
         if debug:
             print(command_list)
         else:
-            print(command_list)
             subprocess.run(command_list, shell=True, cwd=os.getcwd())
