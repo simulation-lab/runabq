@@ -4,7 +4,7 @@ import pytest
 class TestFiles:
 
     @pytest.fixture
-    def input_files_list(self):
+    def simple_files_list(self):
         return ['test1.inp', 'test2.inp', 'test3.inp']
 
     @pytest.fixture
@@ -24,9 +24,9 @@ class TestFiles:
               {'cnt': 3, 'file_name': 'test3.inp'}, ])
         ]
     )
-    def test_get_input_files(self, mocker, input_files_list, expected):
+    def test_get_input_files(self, mocker, simple_files_list, expected):
         from runabq import files
-        mocker.patch.object(files.glob, 'glob', return_value=input_files_list)
+        mocker.patch.object(files.glob, 'glob', return_value=simple_files_list)
         assert files._get_input_files() == expected
 
     @pytest.mark.parametrize(
@@ -35,7 +35,28 @@ class TestFiles:
             ('3:1', ['test3.inp', 'test2.inp', 'test1.inp']),
         ]
     )
-    def test_get_coron_code_files(self, code, inpfile_dirlist, expected):
+    def test_get_coron_code_files(self, code, expected, inpfile_dirlist):
         from runabq import files
         result = files._get_coron_code_files(code, inpfile_dirlist)
         assert result == expected
+
+    @pytest.mark.parametrize(
+        'code, expected', [
+            (['1', '3'],
+             {'target_input_files': (f for f in ['test1.inp', 'test3.inp']),
+              'total_job_num': len(['test1.inp', 'test3.inp'])})
+        ]
+    )
+    def test_get_target_files(self, mocker, code, expected, inpfile_dirlist):
+        from runabq import files
+        mocker.patch.object(files, '_get_input_files',
+                            return_value=inpfile_dirlist)
+        mocker.patch.object(files, '_display_file_list',
+                            return_value=None)
+        mocker.patch.object(files, '_get_file_code',
+                            return_value=code)
+        result = files.get_target_files()
+        result_target_files = [a for a in result['target_input_files']]
+        expected_target_files = [b for b in expected['target_input_files']]
+        assert result_target_files == expected_target_files
+        assert result['total_job_num'] == expected['total_job_num']
