@@ -5,7 +5,8 @@ from shutil import get_terminal_size
 def run_command(solver_version: str,
                 arg_terms: str,
                 target_input_files: list,
-                total_job_num: int):
+                total_job_num: int,
+                debug=True):
     columns = get_terminal_size().columns
     for num, target in enumerate(target_input_files, start=1):
         inpfile = target.rstrip('.inp')
@@ -19,5 +20,7 @@ def run_command(solver_version: str,
         print(f'progress: {num}/{total_job_num}')
         print('-' * columns)
 
-        print(command_list)
-        subprocess.run(command_list)
+        if debug:
+            print(command_list)
+        else:
+            subprocess.run(command_list)

@@ -20,7 +20,8 @@ def runabq(keyword, version):
             run_command(solver_version=solver_version,
                         arg_terms=arg_terms,
                         target_input_files=files['target_input_files'],
-                        total_job_num=files['total_job_num'])
+                        total_job_num=files['total_job_num'],
+                        debug=False)
         else:
             print('file not found.')
     else:
