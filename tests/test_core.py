@@ -25,4 +25,4 @@ class TestCore:
         runabq(keyword, version)
         out, err = capfd.readouterr()
         assert out.strip() == 'abq-command not found.'
-        assert err is ''
+        assert err == ''
