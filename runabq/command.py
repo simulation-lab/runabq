@@ -1,4 +1,5 @@
 import subprocess
+import os
 from shutil import get_terminal_size
 
 
@@ -10,10 +11,10 @@ def run_command(solver_version: str,
     columns = get_terminal_size().columns
     for num, target in enumerate(target_input_files, start=1):
         inpfile = target.rstrip('.inp')
-        if not arg_terms:
-            arg_terms = ''
         command_list = [solver_version,
-                        'interactive', '-j', inpfile, arg_terms]
+                        'interactive', '-j', inpfile]
+        if arg_terms:
+            command_list.append(arg_terms)
 
         print('-' * columns)
         print(f'job: {target}')
@@ -23,4 +24,5 @@ def run_command(solver_version: str,
         if debug:
             print(command_list)
         else:
-            subprocess.run(command_list)
+            print(command_list)
+            subprocess.run(command_list, shell=True, cwd=os.getcwd())
