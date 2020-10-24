@@ -13,25 +13,26 @@ $ pip install runabq
 
 ## Example
 
-When using the latest version.
+If there is a lot of Abaqus input data you want to execute in the current directory, execute the following command.
+Use the latest Abaqus version. That is, it executes the'abaqus' command internally.
 
 ```sh
 $ runabq
 ```
 
-Specify the abaqus version.
+Use the specify abaqus version.
 
 ```sh
 $ runabq -v 2020
 ```
 
-User subroutine and cpus, etc.
+Use user subroutines and CPUs.
 
 ```sh
 $ runabq user=sub.f cpus=5
 ```
 
-All input file in current directory.
+Enter code = "a" to execute all the input files in the current directory.
 
 ```sh
 $ runabq
@@ -44,7 +45,7 @@ files list:
 code = a
 ```
 
-Specify input file.
+If you want to execute only a specific input file, enter numbers separated by ",".
 
 ```sh
 $ runabq
@@ -58,6 +59,8 @@ files list:
      x: exit
 code = 1, 4
 ```
+
+For consecutive numbers, enter the first and last numbers separated by ":".
 
 ```sh
 $ runabq
