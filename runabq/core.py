@@ -14,7 +14,7 @@ def run(keyword, version):
     click.echo('finished.')
 
 
-def runabq(keyword, version, debug):
+def runabq(keyword, version, debug=True):
     if solver_version := get_solver_version(version):
         arg_terms = get_arg_terms(keyword)
         files = get_target_files()
