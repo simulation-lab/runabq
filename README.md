@@ -4,7 +4,7 @@ runabq is the execution script for abaqus jobs in current directory.
 Runs the input files in the current directory continuously.
 
 
-## Install
+## Installation
 
 ```sh
 $ pip install runabq
@@ -30,6 +30,12 @@ Use user subroutines and CPUs.
 
 ```sh
 $ runabq user=sub.f cpus=5
+```
+
+Help
+
+```
+$ runabq --help
 ```
 
 Enter code = "a" to execute all the input files in the current directory.
