@@ -10,6 +10,7 @@ def _get_input_files() -> list:
 
 
 def _display_file_list(input_files_list: list):
+    print("files list:")
     for unit in input_files_list:
         print(f"{unit['cnt']:6d}: {unit['file_name']:s}")
     print("     a: all")
@@ -19,7 +20,7 @@ def _display_file_list(input_files_list: list):
 def _get_file_code() -> list:
     code_list = input("code = ")
     unit_code_list = code_list.split(',')
-    return unit_code_list
+    return [code.strip() for code in unit_code_list]
 
 
 def _get_coron_code_files(code: str, input_files_list: list) -> list:
@@ -36,7 +37,6 @@ def _get_coron_code_files(code: str, input_files_list: list) -> list:
 
 
 def get_target_files() -> dict:
-    print("files list:")
     if input_files_list := _get_input_files():
         _display_file_list(input_files_list)
     else:
