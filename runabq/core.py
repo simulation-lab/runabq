@@ -15,12 +15,12 @@ def run(keyword, version):
 def runabq(keyword, version):
     if solver_version := get_solver_version(version):
         arg_terms = get_arg_terms(keyword)
-        result = get_target_files()
-        if result:
+        files = get_target_files()
+        if files:
             run_command(solver_version=solver_version,
                         arg_terms=arg_terms,
-                        target_input_files=result['target_input_files'],
-                        total_job_num=result['total_job_num'])
+                        target_input_files=files['target_input_files'],
+                        total_job_num=files['total_job_num'])
         else:
             print('file not found.')
     else:
