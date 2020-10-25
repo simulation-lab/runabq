@@ -6,6 +6,7 @@ setup(
     version='1.0.0',
 
     author='kino',
+    author_email='simulation.space.labs@gmail.com',
     url='https://github.com/simulation-lab/runabq',
 
     description='abaqus input-file continuous execution script.',
