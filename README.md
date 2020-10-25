@@ -6,7 +6,33 @@ Runs the input files in the current directory continuously.
 
 ## Installation
 
+To use the runabq package in a virtual environment, do the following.
+This is the case when the name of the virtual environment is abq.
+
+Anaconda
+
 ```sh
+$ conda create -n abq python
+$ conda activate abq
+
+$ pip install runabq
+```
+
+venv: Linux
+
+```sh
+$ python3 -m venv abq
+$ source abq/Scripts/activate
+
+$ pip install runabq
+```
+
+venv: Windows
+
+```sh
+$ python3 -m venv abq
+$ ./abq/Scripts/activate
+
 $ pip install runabq
 ```
 
