@@ -6,12 +6,13 @@ setup(
     version='1.0.0',
 
     author='kino',
+    url='https://github.com/simulation-lab/runabq',
 
     description='abaqus jobs continuous execution script.',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
 
-    python_requires='>=3.8',
+    python_requires='~=3.8',
     packages=find_packages(exclude=('tests',)),
     install_requires=[
         'click~=7.1',
