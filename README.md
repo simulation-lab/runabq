@@ -15,9 +15,7 @@ Anaconda
 $ conda create -n abq python
 $ conda activate abq
 
-$ git clone https://github.com/simulation-lab/runabq.git
-$ cd runabq
-$ pip install -e .
+$ pip install runabq
 ```
 
 venv
@@ -26,9 +24,7 @@ venv
 $ python3 -m venv abq
 $ . abq/Scripts/activate
 
-$ git clone https://github.com/simulation-lab/runabq.git
-$ cd runabq
-$ pip install -e .
+$ pip install runabq
 ```
 
 
