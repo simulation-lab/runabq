@@ -11,10 +11,7 @@ class TestArgs:
     def test_get_solver_version(self, mocker, version, expected):
         from runabq.args import get_solver_version
         from runabq import args
-        insmock = mocker.Mock()
-        insmock.which.return_value = version
-        mocker.patch.object(args, 'which',
-                            mocker.Mock(return_value=insmock))
+        mocker.patch.object(args, 'which', return_value=version)
         assert get_solver_version(version) == expected
 
     @ pytest.mark.parametrize('keyword, expected', [
