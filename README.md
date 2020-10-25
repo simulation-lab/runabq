@@ -18,20 +18,11 @@ $ conda activate abq
 $ pip install runabq
 ```
 
-venv: Linux
+venv
 
 ```sh
 $ python3 -m venv abq
-$ source abq/Scripts/activate
-
-$ pip install runabq
-```
-
-venv: Windows
-
-```sh
-$ python3 -m venv abq
-$ ./abq/Scripts/activate
+$ . abq/Scripts/activate
 
 $ pip install runabq
 ```
