@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='runabq',
-    version='1.0.0',
+    version='0.9.1',
 
     author='kino',
     author_email='simulation.space.labs@gmail.com',
