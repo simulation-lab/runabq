@@ -40,7 +40,7 @@ def get_target_files() -> dict:
     if input_files_list := _get_input_files():
         _display_file_list(input_files_list)
     else:
-        print("no item.")
+        print("input file could not be found.")
         return None
 
     codelist = [target['cnt'] for target in input_files_list]
