@@ -8,7 +8,7 @@ setup(
     author='kino',
     url='https://github.com/simulation-lab/runabq',
 
-    description='abaqus jobs continuous execution script.',
+    description='abaqus input-file continuous execution script.',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
 
