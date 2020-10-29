@@ -65,7 +65,7 @@ files list:
      3: job3.inp
      a: all
      x: exit
-code = a
+code ? a
 ```
 
 If you want to execute only a specific input file, enter numbers separated by ",".
@@ -80,7 +80,7 @@ files list:
      5: test2.inp
      a: all
      x: exit
-code = 1, 4
+code ? 1, 4
 ```
 
 For consecutive numbers, enter the first and last numbers separated by ":".
@@ -95,5 +95,5 @@ files list:
      5: job2.inp
      a: all
      x: exit
-code = 1:3
+code ? 1:3
 ```
