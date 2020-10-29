@@ -24,10 +24,12 @@ class TestFiles:
               {'cnt': 3, 'file_name': 'test3.inp'}, ])
         ]
     )
-    def test_get_input_files(self, mocker, simple_files_list, expected):
+    def test_get_input_files(self, mocker, tmpdir, simple_files_list, expected):
         from runabq import files
-        mocker.patch.object(files.glob, 'glob', return_value=simple_files_list)
-        assert files._get_input_files() == expected
+        mocker.patch.object(files.pathlib.Path, 'glob',
+                            return_value=simple_files_list)
+        current_dir = tmpdir.mkdir('runabq_test_currentdir')
+        assert files._get_input_files(current_dir) == expected
 
     @pytest.mark.parametrize(
         'code, expected', [
@@ -47,7 +49,7 @@ class TestFiles:
               'total_job_num': len(['test1.inp', 'test3.inp'])})
         ]
     )
-    def test_get_target_files(self, mocker, code, expected, inpfile_dirlist):
+    def test_get_target_files(self, mocker, tmpdir, code, expected, inpfile_dirlist):
         from runabq import files
         mocker.patch.object(files, '_get_input_files',
                             return_value=inpfile_dirlist)
@@ -55,7 +57,8 @@ class TestFiles:
                             return_value=None)
         mocker.patch.object(files, '_get_file_code',
                             return_value=code)
-        result = files.get_target_files()
+        current_dir = tmpdir.mkdir('runabq_test_currentdir')
+        result = files.get_target_files(current_dir)
         result_target_files = [a for a in result['target_input_files']]
         expected_target_files = [b for b in expected['target_input_files']]
         assert result_target_files == expected_target_files
