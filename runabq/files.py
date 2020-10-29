@@ -10,7 +10,6 @@ def _get_input_files() -> list:
 
 
 def _display_file_list(input_files_list: list):
-    print("files list:")
     for unit in input_files_list:
         print(f"{unit['cnt']:6d}: {unit['file_name']:s}")
     print("     a: all")
@@ -18,7 +17,7 @@ def _display_file_list(input_files_list: list):
 
 
 def _get_file_code() -> list:
-    code_list = input("code = ")
+    code_list = input("code ? ")
     unit_code_list = code_list.split(',')
     return [code.strip() for code in unit_code_list]
 
@@ -49,7 +48,7 @@ def get_target_files() -> dict:
         code = code.strip()
         if code == 'x' or code == 'exit':
             return None
-        elif code == 'a' or code == 'all':
+        elif code == 'a' or code == 'all' or code == '':
             target_files = [target['file_name'] for target in input_files_list]
             break
         elif code != 'a' or code != 'all':
