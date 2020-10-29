@@ -1,8 +1,10 @@
-import glob
+import os
+import pathlib
 
 
-def _get_input_files() -> list:
-    input_files_list = glob.glob('*.inp')
+def _get_input_files(current_dir) -> list:
+    input_files_generator = pathlib.Path(current_dir).glob('*.inp')
+    input_files_list = [os.path.basename(f) for f in input_files_generator]
     if not input_files_list:
         return list()
     else:
@@ -36,8 +38,8 @@ def _get_coron_code_files(code: str, input_files_list: list) -> list:
     return filelist
 
 
-def get_target_files() -> dict:
-    if input_files_list := _get_input_files():
+def get_target_files(current_dir) -> dict:
+    if input_files_list := _get_input_files(current_dir):
         _display_file_list(input_files_list)
     else:
         try:

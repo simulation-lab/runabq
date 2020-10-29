@@ -1,3 +1,4 @@
+import os
 import click
 from runabq.args import get_solver_version, get_arg_terms
 from runabq.files import get_target_files
@@ -15,9 +16,10 @@ def run(keyword, version):
 
 
 def runabq(keyword, version, debug=True):
+    current_dir = os.getcwd()
     if solver_version := get_solver_version(version):
         arg_terms = get_arg_terms(keyword)
-        files = get_target_files()
+        files = get_target_files(current_dir)
         if files:
             run_command(solver_version=solver_version,
                         arg_terms=arg_terms,
