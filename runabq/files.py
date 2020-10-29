@@ -4,12 +4,13 @@ import glob
 def _get_input_files() -> list:
     input_files_list = glob.glob('*.inp')
     if not input_files_list:
-        return None
-    return [{'cnt': cnt, 'file_name': file}
-            for cnt, file in enumerate(input_files_list, start=1)]
+        return list()
+    else:
+        return [{'cnt': cnt, 'file_name': file}
+                for cnt, file in enumerate(input_files_list, start=1)]
 
 
-def _display_file_list(input_files_list: list):
+def _display_file_list(input_files_list: list) -> None:
     for unit in input_files_list:
         print(f"{unit['cnt']:6d}: {unit['file_name']:s}")
     print("     a: all")
@@ -39,19 +40,22 @@ def get_target_files() -> dict:
     if input_files_list := _get_input_files():
         _display_file_list(input_files_list)
     else:
-        print("input file could not be found.")
-        return None
+        try:
+            raise ValueError('Input file could not be found.')
+        except ValueError as e:
+            print(f'{e}')
+            return dict()
 
     codelist = [target['cnt'] for target in input_files_list]
     target_files = []
     for code in _get_file_code():
         code = code.strip()
         if code == 'x' or code == 'exit':
-            return None
+            return dict()
         elif code == 'a' or code == 'all' or code == '':
             target_files = [target['file_name'] for target in input_files_list]
             break
-        elif code != 'a' or code != 'all':
+        else:
             if ':' in code:
                 filelist = _get_coron_code_files(code, input_files_list)
                 target_files.extend(filelist)
@@ -59,11 +63,14 @@ def get_target_files() -> dict:
                 try:
                     int_code = int(code)
                 except ValueError as e:
-                    print(f'{e}')
-                    return None
+                    print(f'The input code is invalid.')
+                    return dict()
                 if not int_code in codelist:
-                    print("No such file is found.")
-                    return None
+                    try:
+                        raise ValueError('No such file is found.')
+                    except ValueError as e:
+                        print(f'{e} {code}')
+                        return dict()
                 for target in input_files_list:
                     if target['cnt'] == int_code:
                         target_files.append(target['file_name'])
