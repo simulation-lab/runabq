@@ -3,7 +3,7 @@
 runabq is the execution script for abaqus jobs in current directory.
 Runs the input files in the current directory continuously.
 
-[![PyPI Version](https://img.shields.io/pypi/v/runabq.svg??style=flat&color=blue)](https://pypi.org/project/runabq/)
+[![PyPI Version](https://img.shields.io/pypi/v/runabq.svg??style=flat)](https://pypi.org/project/runabq/)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 
