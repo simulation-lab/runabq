@@ -3,29 +3,18 @@
 runabq is the execution script for abaqus jobs in current directory.
 Runs the input files in the current directory continuously.
 
+[![PyPI Version](https://img.shields.io/pypi/v/runabq.svg??style=flat&color=blue)](https://pypi.org/project/runabq/)
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
+
 
 ## Installation
 
-To use the runabq package in a virtual environment, do the following.
-This is the case when the name of the virtual environment is abq.
-
-Anaconda
+Anaconda, venv
 
 ```sh
-$ conda create -n abq python
-$ conda activate abq
-
 $ pip install runabq
 ```
 
-venv
-
-```sh
-$ python3 -m venv abq
-$ . abq/Scripts/activate
-
-$ pip install runabq
-```
 
 
 ## Usage
