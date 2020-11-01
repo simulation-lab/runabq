@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 
 description = '\
 runabq is a command tool that can execute multiple input data files \
-of FEA software "Abaqus" in succession.'
+of FEA software Abaqus in succession.'
 
 setup(
     name='runabq',
