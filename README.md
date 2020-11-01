@@ -1,7 +1,7 @@
 # runabq
 
-runabq is the execution script for abaqus jobs in current directory.
-Runs the input files in the current directory continuously.
+runabq is a command tool that can input multiple input data files of FEA software "Abaqus" in succession.
+runabq can execute all the input data in the current directory with a simple command.
 
 [![PyPI Version](https://img.shields.io/pypi/v/runabq.svg??style=flat)](https://pypi.org/project/runabq/)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
@@ -19,7 +19,6 @@ $ pip install runabq
 
 ## Usage
 
-If there is a lot of Abaqus input data you want to execute in the current directory, execute the following command.
 Use the latest Abaqus version. That is, it executes the'abaqus' command internally.
 
 ```sh
