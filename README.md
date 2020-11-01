@@ -1,6 +1,6 @@
 # runabq
 
-runabq is a command tool that can input multiple input data files of FEA software "Abaqus" in succession.
+runabq is a command tool that can execute multiple input data files of FEA software "Abaqus" in succession.
 runabq can execute all the input data in the current directory with a simple command.
 
 [![PyPI Version](https://img.shields.io/pypi/v/runabq.svg??style=flat)](https://pypi.org/project/runabq/)
