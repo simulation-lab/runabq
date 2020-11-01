@@ -1,6 +1,10 @@
 from setuptools import find_packages, setup
 
 
+description = '\
+runabq is a command tool that can execute multiple input data files \
+of FEA software "Abaqus" in succession.'
+
 setup(
     name='runabq',
     version='0.9.5',
@@ -9,7 +13,7 @@ setup(
     author_email='simulation.space.labs@gmail.com',
     url='https://github.com/simulation-lab/runabq',
 
-    description='abaqus input-file continuous execution script.',
+    description=description,
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
 
