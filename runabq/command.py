@@ -7,7 +7,7 @@ def run_command(solver_version: str,
                 arg_terms: str,
                 target_input_files: list,
                 total_job_num: int,
-                debug=True):
+                debug=True) -> None:
     columns = get_terminal_size().columns
     for num, target in enumerate(target_input_files, start=1):
         inpfile = target.rstrip('.inp')
