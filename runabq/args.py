@@ -9,11 +9,11 @@ def get_solver_version(version: str) -> str:
     if which(abc):
         return abc
     else:
-        return None
+        return str()
 
 
 def get_arg_terms(keyword: list) -> str:
     if keyword:
         return ' '.join(keyword)
     else:
-        return None
+        return str()
