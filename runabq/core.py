@@ -15,7 +15,7 @@ def run(keyword, version):
     click.echo('finished.')
 
 
-def runabq(keyword, version, debug=True):
+def runabq(keyword, version, debug=True) -> None:
     current_dir = os.getcwd()
     if solver_version := get_solver_version(version):
         arg_terms = get_arg_terms(keyword)
@@ -27,4 +27,4 @@ def runabq(keyword, version, debug=True):
                         total_job_num=files['total_job_num'],
                         debug=debug)
     else:
-        print('abq-command not found.')
+        print('abaqus command not found.')
