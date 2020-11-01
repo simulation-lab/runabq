@@ -4,8 +4,12 @@ from runabq.args import get_solver_version, get_arg_terms
 from runabq.files import get_target_files
 from runabq.command import run_command
 
+description = '\
+runabq is a command tool that can execute multiple input data files \
+of FEA software "Abaqus" in succession.'
 
-@click.command()
+
+@click.command(help=description)
 @click.option('--version', '-v', default='latest', type=str,
               help='Abaqus version. example: if abq2020 then "-v 2020".')
 @click.argument('keyword', nargs=-1)
