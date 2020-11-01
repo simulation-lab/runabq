@@ -24,5 +24,5 @@ class TestCore:
         version = scenario_data['solver_version']
         runabq(keyword, version)
         out, err = capfd.readouterr()
-        assert out.strip() == 'abq-command not found.'
+        assert out.strip() == 'abaqus command not found.'
         assert err == ''
