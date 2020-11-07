@@ -5,6 +5,7 @@ runabq can execute all the input data in the current directory with a simple com
 
 [![PyPI Version](https://img.shields.io/pypi/v/runabq.svg??style=flat)](https://pypi.org/project/runabq/)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
+[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fhttps%3A%2F%2Fgithub.com%2Fsimulation-lab%2Frunabq%2Fbadge%3Fref%3Dmaster&style=flat)](https://actions-badge.atrox.dev/https://github.com/simulation-lab/runabq/goto?ref=master)
 
 
 ## Installation
