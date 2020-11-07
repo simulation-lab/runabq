@@ -4,8 +4,8 @@ runabq is a command tool that can execute multiple input data files of FEA softw
 runabq can execute all the input data in the current directory with a simple command.
 
 [![PyPI Version](https://img.shields.io/pypi/v/runabq.svg??style=flat)](https://pypi.org/project/runabq/)
-[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 ![GitHub Actions](https://github.com/simulation-lab/runabq/workflows/GitHub%20Actions/badge.svg)
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 
 ## Installation
