@@ -41,7 +41,7 @@ jobs:
           total=$(grep total htmlcov/index.html -A 10000 | grep data-ratio -m 1 | grep -e [0-9][0-9]% -o)
           echo ${total}
           COLOR=green
-          coverage=https://img.shields.io/badge/coavrege-${total}%25-${COLOR}
+          coverage=https://img.shields.io/badge/Coverage-${total}-${COLOR}
           echo ${coverage}
           pwd
 
