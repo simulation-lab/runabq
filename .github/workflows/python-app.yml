@@ -43,4 +43,4 @@ jobs:
           coverage=https://img.shields.io/badge/Coverage-${total}-${COLOR}
           pwd
 
-          curl ${coverage} > badge-coverage.svg
+          wget -O badge-coverage.svg ${coverage}
