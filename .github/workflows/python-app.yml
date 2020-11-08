@@ -37,10 +37,15 @@ jobs:
         run: |
           pytest
       - name: Publish coverage badge
+        uses: appleboy/scp-action@master
         run: |
           total=$(grep total htmlcov/index.html -A 10000 | grep data-ratio -m 1 | grep -e [0-9][0-9]% -o)
           COLOR=green
           coverage=https://img.shields.io/badge/Coverage-${total}-${COLOR}
-          pwd
-
           wget -O badge-coverage.svg ${coverage}
+        with:
+          host: ${{ secrets.SAKURA_HOST }}
+          username: ${{ secrets.SAKURA_USERNAME }}
+          password: ${{ secrets.SAKURA_PASSWORD }}
+          source: "badge-coverage.svg"
+          target: ${{ secrets.SAKURA_TARGET }}
