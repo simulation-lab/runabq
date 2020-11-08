@@ -40,7 +40,7 @@ jobs:
         run: |
           total=$(grep total htmlcov/index.html -A 10000 | grep data-ratio -m 1 | grep -e [0-9][0-9]% -o)
           coverage=${total:0:-1}
-          coverage=$((coverage))
+          echo $coverage
           if [ $coverage -ge 83.33 ] ; then
             COLOR=brightgreen
           elif [ $coverage -ge 66.67 ] ; then
