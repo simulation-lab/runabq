@@ -21,3 +21,7 @@ class TestArgs:
     def test_get_arg_terms(self, keyword, expected):
         from runabq.args import get_arg_terms
         assert get_arg_terms(keyword) == expected
+
+    def test_get_arg_terms_no_keyword(self):
+        from runabq.args import get_arg_terms
+        assert get_arg_terms(keyword=None) == str()
