@@ -39,9 +39,23 @@ jobs:
       - name: Generate coverage badge
         run: |
           total=$(grep total htmlcov/index.html -A 10000 | grep data-ratio -m 1 | grep -e [0-9][0-9]% -o)
-          COLOR=green
-          coverage=https://img.shields.io/badge/Coverage-${total}-${COLOR}
-          wget -O badge-coverage.svg ${coverage}
+          coverage=${total:0:-1}
+          coverage=$((coverage))
+          if [ $coverage -ge 83.33 ] ; then
+            COLOR=brightgreen
+          elif [ $coverage -ge 66.67 ] ; then
+            COLOR=green
+          elif [ $coverage -ge 50.00 ] ; then
+            COLOR=yellowgreen
+          elif [ $coverage -ge 33.33 ] ; then
+            COLOR=yellow
+          elif [ $coverage -ge 16.67 ] ; then
+            COLOR=orange
+          else
+            COLOR=red
+          fi
+          badge=https://img.shields.io/badge/Coverage-${total}-${COLOR}
+          wget -O badge-coverage.svg ${badge}
       - name: Publish coverage badge
         uses: appleboy/scp-action@master
         with:
