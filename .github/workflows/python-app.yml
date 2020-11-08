@@ -43,4 +43,5 @@ jobs:
           COLOR=green
           pwd
 
-          curl 'https://img.shields.io/badge/coavrege-$total%25-$COLOR' > badge-coverage.svg
+          wget 'https://img.shields.io/badge/coavrege-$total%25-$COLOR' > badge-coverage.svg
+        working-directory: ./.github/workflows/
