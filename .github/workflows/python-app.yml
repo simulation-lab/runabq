@@ -41,15 +41,15 @@ jobs:
           total=$(grep total htmlcov/index.html -A 10000 | grep data-ratio -m 1 | grep -e [0-9][0-9]% -o)
           coverage=${total:0:-1}
           echo $coverage
-          if [ $coverage -ge 83.33 ] ; then
+          if [ $coverage -ge 83 ] ; then
             COLOR=brightgreen
-          elif [ $coverage -ge 66.67 ] ; then
+          elif [ $coverage -ge 67 ] ; then
             COLOR=green
-          elif [ $coverage -ge 50.00 ] ; then
+          elif [ $coverage -ge 50 ] ; then
             COLOR=yellowgreen
-          elif [ $coverage -ge 33.33 ] ; then
+          elif [ $coverage -ge 33 ] ; then
             COLOR=yellow
-          elif [ $coverage -ge 16.67 ] ; then
+          elif [ $coverage -ge 17 ] ; then
             COLOR=orange
           else
             COLOR=red
