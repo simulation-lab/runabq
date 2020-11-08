@@ -37,10 +37,11 @@ jobs:
         run: |
           pytest
       - name: Publish coverage badge
+        working-directory: ./workflows
         run: |
           total=$(grep total htmlcov/index.html -A 10000 | grep data-ratio -m 1 | grep -e [0-9][0-9]% -o)
           echo ${total}
           COLOR=green
           pwd
-
+          
           curl 'https://img.shields.io/badge/coavrege-$total%25-$COLOR' > badge-coverage.svg
