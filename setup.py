@@ -7,7 +7,7 @@ of FEA software Abaqus in succession.'
 
 setup(
     name='runabq',
-    version='0.9.8',
+    version='0.9.9',
 
     author='kino',
     author_email='simulation.space.labs@gmail.com',
