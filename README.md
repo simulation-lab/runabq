@@ -7,7 +7,7 @@ runabq can execute all the input data in the current directory with a simple com
 [![PyPI Version](https://img.shields.io/pypi/v/runabq.svg??style=flat)](https://pypi.org/project/runabq/)
 ![GitHub Actions](https://github.com/simulation-lab/runabq/workflows/GitHub%20Actions/badge.svg)
 ![CodeQL](https://github.com/simulation-lab/runabq/workflows/CodeQL/badge.svg)
-![Coverage](https://psycho-frame.com/github/workflows/runabq/badge-coverage.svg)
+![Coverage](https://labs.psycho-frame.com/github/workflows/runabq/badge-coverage.svg)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 [![Downloads](https://pepy.tech/badge/runabq)](https://pepy.tech/project/runabq)
 
