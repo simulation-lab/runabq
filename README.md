@@ -8,7 +8,6 @@ runabq can execute all the input data in the current directory with a simple com
 ![GitHub Actions](https://github.com/simulation-lab/runabq/workflows/GitHub%20Actions/badge.svg)
 ![CodeQL](https://github.com/simulation-lab/runabq/workflows/CodeQL/badge.svg)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
-[![Downloads](https://pepy.tech/badge/runabq)](https://pepy.tech/project/runabq)
 
 
 ## Installation
@@ -32,7 +31,13 @@ $ runabq
 Use the specify abaqus version.
 
 ```sh
-$ runabq -v 2020
+$ runabq -v 2021
+```
+
+student edition
+
+```sh
+$ runabq -v 2021se
 ```
 
 Use user subroutines and CPUs.

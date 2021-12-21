@@ -1,13 +1,13 @@
 from setuptools import find_packages, setup
 
 
-description = '\
-runabq is a command tool that can execute multiple input data files \
-of FEA software Abaqus in succession.'
+description = """
+runabq is a command tool that can execute multiple input data files
+of FEA software Abaqus in succession."""
 
 setup(
     name='runabq',
-    version='0.9.9',
+    version='1.0.0',
 
     author='kino',
     author_email='simulation.space.labs@gmail.com',
@@ -34,6 +34,7 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
         'Operating System :: OS Independent',
     ],
 
