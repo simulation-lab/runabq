@@ -12,7 +12,7 @@ def get_solver_version(version: str) -> str:
         return str()
 
 
-def get_arg_terms(keyword: tuple[str]) -> str:
+def get_arg_terms(keyword: tuple) -> str:
     if keyword:
         return ' '.join(keyword)
     else:

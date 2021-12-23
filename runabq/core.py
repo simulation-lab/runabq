@@ -13,13 +13,13 @@ of FEA software Abaqus in succession."""
 @click.option('--version', '-v', default='latest', type=str,
               help='Abaqus version. example: if abq2021 then "-v 2021".')
 @click.argument('keyword', nargs=-1)
-def run(keyword: tuple[str], version: str):
+def run(keyword: tuple, version: str):
     debug = False
     runabq(keyword, version, debug)
     click.echo('finished.')
 
 
-def runabq(keyword: tuple[str], version: str, debug=True) -> None:
+def runabq(keyword: tuple, version: str, debug=True) -> None:
     current_dir = os.getcwd()
     if solver_version := get_solver_version(version):
         arg_terms = get_arg_terms(keyword)
